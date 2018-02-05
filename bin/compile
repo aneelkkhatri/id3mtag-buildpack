@@ -16,7 +16,6 @@ curl http://http.us.debian.org/debian/pool/main/g/gcc-7/libstdc++6_7.3.0-1_amd64
 ar x libstdc++6_7.3.0-1_amd64.deb
 tar -xvf data.tar.xz
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/usr/lib
-export PATH=$PATH:/app/usr/bin
+cp -rf ./usr/* ./
 
 ls -alh
