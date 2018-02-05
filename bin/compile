@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo "-----> Installing id3mtag"
+# change to the the BUILD_DIR ($1)
+cd $1
+
+# download the binary (-O) silently (-s)
+curl https://github.com/squell/id3/releases/download/0.80/id3mtag_0.80-1_amd64.deb -s -O -L
+# extract
+ar x id3mtag_0.80-1_amd64.deb
+tar -xvf data.tar.xz
+
+# download the binary (-O) silently (-s)
+curl http://http.us.debian.org/debian/pool/main/g/gcc-7/libstdc++6_7.3.0-1_amd64.deb -s -O -L
+# extract
+ar x libstdc++6_7.3.0-1_amd64.deb
+tar -xvf data.tar.xz
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/usr/lib
+export PATH=$PATH:/app/usr/bin
+
+ls -alh
